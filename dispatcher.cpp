@@ -35,10 +35,10 @@ int main() {
     sleep(1);
     
     kill(pid1, SIGTERM);
-    waitpid(pid1, &status, WSTOPPED);
+    waitpid(pid1, &status, 0);
     cerr << "child[" << pid1 << "] exited with status " << status << endl;
     
-    waitpid(pid2, &status, WEXITED);
+    waitpid(pid2, &status, 0);
     cerr << "child[" << pid2 << "] exited with status " << status << endl;
         
 return 0;
